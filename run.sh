@@ -21,7 +21,7 @@ elif [ "$cmd" = "run_reporter" ]; then
     docker run --rm -v "$(pwd)/data:/data" rep-image
 
 elif [ "$cmd" = "structure" ]; then
-    find . -not -path "./.git*"
+    find . -not -path "./.git" -not -path "./.git/*"
 
 elif [ "$cmd" = "clear_data" ]; then
     rm -f data/*.csv data/*.html
